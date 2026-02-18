@@ -23,6 +23,7 @@ export function useAudio() {
 // Audio file paths for each section (placeholder paths - replace with your actual audio files)
 const audioFiles: { [key: string]: string } = {
   'intro': '/audio/intro.mp3',
+  'value-proposition': '/audio/value-proposition.mp3',
   'full-addressability': '/audio/full-addressability.mp3',
   'agnostic-platform': '/audio/agnostic-platform.mp3',
   'campaign-management': '/audio/campaign-management.mp3',

@@ -3,6 +3,7 @@ import { VerticalMenu } from './components/VerticalMenu';
 import { AudioControl } from './components/AudioControl';
 import { AudioIndicator } from './components/AudioIndicator';
 import { IntroSection } from './components/sections/IntroSection';
+import { ValuePropositionSection } from './components/sections/ValuePropositionSection';
 import { FullAddressabilitySection } from './components/sections/FullAddressabilitySection';
 import { AgnosticPlatformSection } from './components/sections/AgnosticPlatformSection';
 import { CampaignManagementSection } from './components/sections/CampaignManagementSection';
@@ -14,6 +15,7 @@ import { AudioProvider, useAudio } from './contexts/AudioContext';
 
 export const sections = [
   { id: 'intro', label: 'Intro' },
+  { id: 'value-proposition', label: 'Value Proposition' },
   { id: 'full-addressability', label: 'Full Addressability' },
   { id: 'agnostic-platform', label: 'Agnostic platform' },
   { id: 'campaign-management', label: 'Streamlined Campaign Management' },
@@ -132,6 +134,14 @@ function AppContent() {
         className="w-screen h-screen snap-start snap-always relative"
       >
         <IntroSection />
+      </section>
+
+      <section 
+        id="value-proposition" 
+        ref={(el) => (sectionsRef.current['value-proposition'] = el)}
+        className="w-screen h-screen snap-start snap-always relative"
+      >
+        <ValuePropositionSection />
       </section>
 
       <section 

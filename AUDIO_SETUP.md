@@ -17,6 +17,7 @@ Place your voiceover audio files in the `/public/audio/` directory with the foll
 ```
 /public/audio/
 ├── intro.mp3
+├── value-proposition.mp3
 ├── full-addressability.mp3
 ├── agnostic-platform.mp3
 ├── campaign-management.mp3
