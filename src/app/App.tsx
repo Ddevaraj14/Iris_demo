@@ -130,7 +130,7 @@ function AppContent() {
       {/* Sections */}
       <section 
         id="intro" 
-        ref={(el) => (sectionsRef.current['intro'] = el)}
+        ref={(el) => { if (el) sectionsRef.current['intro'] = el; }}
         className="w-screen h-screen snap-start snap-always relative"
       >
         <IntroSection />
@@ -138,7 +138,7 @@ function AppContent() {
 
       <section 
         id="value-proposition" 
-        ref={(el) => (sectionsRef.current['value-proposition'] = el)}
+        ref={(el) => { if (el) sectionsRef.current['value-proposition'] = el; }}
         className="w-screen h-screen snap-start snap-always relative"
       >
         <ValuePropositionSection />
@@ -146,7 +146,7 @@ function AppContent() {
 
       <section 
         id="full-addressability" 
-        ref={(el) => (sectionsRef.current['full-addressability'] = el)}
+        ref={(el) => { if (el) sectionsRef.current['full-addressability'] = el; }}
         className="w-screen h-screen snap-start snap-always relative"
       >
         <FullAddressabilitySection />
@@ -154,7 +154,7 @@ function AppContent() {
 
       <section 
         id="agnostic-platform" 
-        ref={(el) => (sectionsRef.current['agnostic-platform'] = el)}
+        ref={(el) => { if (el) sectionsRef.current['agnostic-platform'] = el; }}
         className="w-screen h-screen snap-start snap-always relative"
       >
         <AgnosticPlatformSection />
@@ -162,7 +162,7 @@ function AppContent() {
 
       <section 
         id="campaign-management" 
-        ref={(el) => (sectionsRef.current['campaign-management'] = el)}
+        ref={(el) => { if (el) sectionsRef.current['campaign-management'] = el; }}
         className="w-screen h-screen snap-start snap-always relative"
       >
         <CampaignManagementSection />
@@ -170,7 +170,7 @@ function AppContent() {
 
       <section 
         id="yield-optimization" 
-        ref={(el) => (sectionsRef.current['yield-optimization'] = el)}
+        ref={(el) => { if (el) sectionsRef.current['yield-optimization'] = el; }}
         className="w-screen h-screen snap-start snap-always relative"
       >
         <YieldOptimizationSection />
@@ -178,7 +178,7 @@ function AppContent() {
 
       <section 
         id="audience-intelligence" 
-        ref={(el) => (sectionsRef.current['audience-intelligence'] = el)}
+        ref={(el) => { if (el) sectionsRef.current['audience-intelligence'] = el; }}
         className="w-screen h-screen snap-start snap-always relative"
       >
         <AudienceIntelligenceSection />
@@ -186,7 +186,7 @@ function AppContent() {
 
       <section 
         id="premium-programmatic" 
-        ref={(el) => (sectionsRef.current['premium-programmatic'] = el)}
+        ref={(el) => { if (el) sectionsRef.current['premium-programmatic'] = el; }}
         className="w-screen h-screen snap-start snap-always relative"
       >
         <PremiumProgrammaticSection />
@@ -194,7 +194,7 @@ function AppContent() {
 
       <section 
         id="flexible-delivery" 
-        ref={(el) => (sectionsRef.current['flexible-delivery'] = el)}
+        ref={(el) => { if (el) sectionsRef.current['flexible-delivery'] = el; }}
         className="w-screen h-screen snap-start snap-always relative"
       >
         <FlexibleDeliverySection />
