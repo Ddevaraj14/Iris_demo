@@ -27,8 +27,8 @@ export const sections = [
 
 function AppContent() {
   const [activeSection, setActiveSection] = useState('intro');
-  const sectionsRef = useRef<{ [key: string]: HTMLElement | null }>({});
-  const containerRef = useRef<HTMLDivElement>(null);
+  const sectionsRef = useRef({});
+  const containerRef = useRef(null);
   const isManualScrollRef = useRef(false);
   const { playAudio, stopAudio, onAudioEnd, removeAudioEndCallback, isMuted } = useAudio();
 
@@ -71,7 +71,7 @@ function AppContent() {
       threshold: 0.5,
     };
 
-    const observerCallback = (entries: IntersectionObserverEntry[]) => {
+    const observerCallback = (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting && entry.intersectionRatio >= 0.5) {
           const newSectionId = entry.target.id;
@@ -98,7 +98,7 @@ function AppContent() {
     return () => observer.disconnect();
   }, [playAudio, stopAudio, isMuted]);
 
-  const scrollToSection = (sectionId: string) => {
+  const scrollToSection = (sectionId) => {
     const element = sectionsRef.current[sectionId];
     if (element && containerRef.current) {
       isManualScrollRef.current = true;

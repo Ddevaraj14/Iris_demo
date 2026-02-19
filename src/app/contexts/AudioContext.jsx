@@ -1,16 +1,6 @@
-import { createContext, useContext, useState, useRef, useCallback, useEffect, ReactNode } from 'react';
+import { createContext, useContext, useState, useRef, useCallback, useEffect } from 'react';
 
-interface AudioContextType {
-  isMuted: boolean;
-  toggleMute: () => void;
-  playAudio: (sectionId: string) => void;
-  stopAudio: () => void;
-  currentPlayingSection: string | null;
-  onAudioEnd: (callback: () => void) => void;
-  removeAudioEndCallback: () => void;
-}
-
-const AudioContext = createContext<AudioContextType | undefined>(undefined);
+const AudioContext = createContext(undefined);
 
 export function useAudio() {
   const context = useContext(AudioContext);
@@ -22,7 +12,7 @@ export function useAudio() {
 
 // Audio file paths for each section - using base URL for GitHub Pages compatibility
 const BASE_URL = import.meta.env.BASE_URL;
-const audioFiles: { [key: string]: string } = {
+const audioFiles = {
   'intro': `${BASE_URL}audio/intro.mp3`,
   'value-proposition': `${BASE_URL}audio/value-proposition.mp3`,
   'full-addressability': `${BASE_URL}audio/full-addressability.mp3`,
@@ -34,11 +24,11 @@ const audioFiles: { [key: string]: string } = {
   'flexible-delivery': `${BASE_URL}audio/flexible-delivery.mp3`,
 };
 
-export function AudioProvider({ children }: { children: ReactNode }) {
+export function AudioProvider({ children }) {
   const [isMuted, setIsMuted] = useState(false);
-  const [currentPlayingSection, setCurrentPlayingSection] = useState<string | null>(null);
-  const audioRef = useRef<HTMLAudioElement | null>(null);
-  const audioEndCallbackRef = useRef<(() => void) | null>(null);
+  const [currentPlayingSection, setCurrentPlayingSection] = useState(null);
+  const audioRef = useRef(null);
+  const audioEndCallbackRef = useRef(null);
 
   useEffect(() => {
     // Initialize audio element
@@ -77,7 +67,7 @@ export function AudioProvider({ children }: { children: ReactNode }) {
     });
   }, [currentPlayingSection]);
 
-  const playAudio = useCallback((sectionId: string) => {
+  const playAudio = useCallback((sectionId) => {
     if (!audioRef.current || isMuted) return;
 
     // Stop current audio if playing
@@ -111,7 +101,7 @@ export function AudioProvider({ children }: { children: ReactNode }) {
     setCurrentPlayingSection(null);
   }, []);
 
-  const onAudioEnd = useCallback((callback: () => void) => {
+  const onAudioEnd = useCallback((callback) => {
     audioEndCallbackRef.current = callback;
   }, []);
 
