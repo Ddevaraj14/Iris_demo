@@ -5,7 +5,7 @@ import { useRef } from 'react';
 
 export function FlexibleDeliverySection() {
   const { ref, isInView } = useInView();
-  const sectionRef = useRef<HTMLDivElement>(null);
+  const sectionRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ["start end", "end start"]

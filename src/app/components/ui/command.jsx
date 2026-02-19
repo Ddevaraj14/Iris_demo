@@ -1,7 +1,7 @@
 "use client";
 
-import * as React from "react";
-import { Command as CommandPrimitive } from "cmdk";
+import * from "react";
+import { Command } from "cmdk";
 import { SearchIcon } from "lucide-react";
 
 import { cn } from "./utils";
@@ -13,10 +13,9 @@ import {
   DialogTitle,
 } from "./dialog";
 
-function Command({
-  className,
+function Command({ className,
   ...props
-}: React.ComponentProps<typeof CommandPrimitive>) {
+ }) {
   return (
     <CommandPrimitive
       data-slot="command"
@@ -53,10 +52,9 @@ function CommandDialog({
   );
 }
 
-function CommandInput({
-  className,
+function CommandInput({ className,
   ...props
-}: React.ComponentProps<typeof CommandPrimitive.Input>) {
+ }) {
   return (
     <div
       data-slot="command-input-wrapper"
@@ -75,10 +73,9 @@ function CommandInput({
   );
 }
 
-function CommandList({
-  className,
+function CommandList({ className,
   ...props
-}: React.ComponentProps<typeof CommandPrimitive.List>) {
+ }) {
   return (
     <CommandPrimitive.List
       data-slot="command-list"
@@ -91,9 +88,8 @@ function CommandList({
   );
 }
 
-function CommandEmpty({
-  ...props
-}: React.ComponentProps<typeof CommandPrimitive.Empty>) {
+function CommandEmpty({ ...props
+ }) {
   return (
     <CommandPrimitive.Empty
       data-slot="command-empty"
@@ -103,10 +99,9 @@ function CommandEmpty({
   );
 }
 
-function CommandGroup({
-  className,
+function CommandGroup({ className,
   ...props
-}: React.ComponentProps<typeof CommandPrimitive.Group>) {
+ }) {
   return (
     <CommandPrimitive.Group
       data-slot="command-group"
@@ -119,10 +114,9 @@ function CommandGroup({
   );
 }
 
-function CommandSeparator({
-  className,
+function CommandSeparator({ className,
   ...props
-}: React.ComponentProps<typeof CommandPrimitive.Separator>) {
+ }) {
   return (
     <CommandPrimitive.Separator
       data-slot="command-separator"
@@ -132,10 +126,9 @@ function CommandSeparator({
   );
 }
 
-function CommandItem({
-  className,
+function CommandItem({ className,
   ...props
-}: React.ComponentProps<typeof CommandPrimitive.Item>) {
+ }) {
   return (
     <CommandPrimitive.Item
       data-slot="command-item"

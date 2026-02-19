@@ -1,6 +1,6 @@
 "use client";
 
-import * as React from "react";
+import * from "react";
 import { Slot } from "@radix-ui/react-slot";
 import { VariantProps, cva } from "class-variance-authority";
 import { PanelLeftIcon } from "lucide-react";
@@ -42,7 +42,7 @@ type SidebarContextProps = {
   toggleSidebar: () => void;
 };
 
-const SidebarContext = React.createContext<SidebarContextProps | null>(null);
+const SidebarContext = React.createContext(null);
 
 function useSidebar() {
   const context = React.useContext(SidebarContext);
@@ -113,7 +113,7 @@ function SidebarProvider({
   // This makes it easier to style the sidebar with Tailwind classes.
   const state = open ? "expanded" : "collapsed";
 
-  const contextValue = React.useMemo<SidebarContextProps>(
+  const contextValue = React.useMemo(
     () => ({
       state,
       open,
@@ -136,7 +136,7 @@ function SidebarProvider({
               "--sidebar-width": SIDEBAR_WIDTH,
               "--sidebar-width-icon": SIDEBAR_WIDTH_ICON,
               ...style,
-            } as React.CSSProperties
+            }.CSSProperties
           }
           className={cn(
             "group/sidebar-wrapper has-data-[variant=inset]:bg-sidebar flex min-h-svh w-full",
@@ -191,7 +191,7 @@ function Sidebar({
           style={
             {
               "--sidebar-width": SIDEBAR_WIDTH_MOBILE,
-            } as React.CSSProperties
+            }.CSSProperties
           }
           side={side}
         >
@@ -253,11 +253,10 @@ function Sidebar({
   );
 }
 
-function SidebarTrigger({
-  className,
+function SidebarTrigger({ className,
   onClick,
   ...props
-}: React.ComponentProps<typeof Button>) {
+ }) {
   const { toggleSidebar } = useSidebar();
 
   return (
@@ -318,10 +317,9 @@ function SidebarInset({ className, ...props }: React.ComponentProps<"main">) {
   );
 }
 
-function SidebarInput({
-  className,
+function SidebarInput({ className,
   ...props
-}: React.ComponentProps<typeof Input>) {
+ }) {
   return (
     <Input
       data-slot="sidebar-input"
@@ -354,10 +352,9 @@ function SidebarFooter({ className, ...props }: React.ComponentProps<"div">) {
   );
 }
 
-function SidebarSeparator({
-  className,
+function SidebarSeparator({ className,
   ...props
-}: React.ComponentProps<typeof Separator>) {
+ }) {
   return (
     <Separator
       data-slot="sidebar-separator"
@@ -630,7 +627,7 @@ function SidebarMenuSkeleton({
         style={
           {
             "--skeleton-width": width,
-          } as React.CSSProperties
+          }.CSSProperties
         }
       />
     </div>

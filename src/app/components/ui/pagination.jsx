@@ -1,4 +1,4 @@
-import * as React from "react";
+import * from "react";
 import {
   ChevronLeftIcon,
   ChevronRightIcon,
@@ -42,12 +42,11 @@ type PaginationLinkProps = {
 } & Pick<React.ComponentProps<typeof Button>, "size"> &
   React.ComponentProps<"a">;
 
-function PaginationLink({
-  className,
+function PaginationLink({ className,
   isActive,
   size = "icon",
   ...props
-}: PaginationLinkProps) {
+ }) {
   return (
     <a
       aria-current={isActive ? "page" : undefined}
@@ -65,10 +64,9 @@ function PaginationLink({
   );
 }
 
-function PaginationPrevious({
-  className,
+function PaginationPrevious({ className,
   ...props
-}: React.ComponentProps<typeof PaginationLink>) {
+ }) {
   return (
     <PaginationLink
       aria-label="Go to previous page"
@@ -82,10 +80,9 @@ function PaginationPrevious({
   );
 }
 
-function PaginationNext({
-  className,
+function PaginationNext({ className,
   ...props
-}: React.ComponentProps<typeof PaginationLink>) {
+ }) {
   return (
     <PaginationLink
       aria-label="Go to next page"

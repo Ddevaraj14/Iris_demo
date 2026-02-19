@@ -1,14 +1,13 @@
 "use client";
 
-import * as React from "react";
-import * as TabsPrimitive from "@radix-ui/react-tabs";
+import * from "react";
+import * from "@radix-ui/react-tabs";
 
 import { cn } from "./utils";
 
-function Tabs({
-  className,
+function Tabs({ className,
   ...props
-}: React.ComponentProps<typeof TabsPrimitive.Root>) {
+ }) {
   return (
     <TabsPrimitive.Root
       data-slot="tabs"
@@ -18,10 +17,9 @@ function Tabs({
   );
 }
 
-function TabsList({
-  className,
+function TabsList({ className,
   ...props
-}: React.ComponentProps<typeof TabsPrimitive.List>) {
+ }) {
   return (
     <TabsPrimitive.List
       data-slot="tabs-list"
@@ -34,10 +32,9 @@ function TabsList({
   );
 }
 
-function TabsTrigger({
-  className,
+function TabsTrigger({ className,
   ...props
-}: React.ComponentProps<typeof TabsPrimitive.Trigger>) {
+ }) {
   return (
     <TabsPrimitive.Trigger
       data-slot="tabs-trigger"
@@ -50,10 +47,9 @@ function TabsTrigger({
   );
 }
 
-function TabsContent({
-  className,
+function TabsContent({ className,
   ...props
-}: React.ComponentProps<typeof TabsPrimitive.Content>) {
+ }) {
   return (
     <TabsPrimitive.Content
       data-slot="tabs-content"

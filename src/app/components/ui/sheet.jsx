@@ -1,37 +1,33 @@
 "use client";
 
-import * as React from "react";
-import * as SheetPrimitive from "@radix-ui/react-dialog";
+import * from "react";
+import * from "@radix-ui/react-dialog";
 import { XIcon } from "lucide-react";
 
 import { cn } from "./utils";
 
-function Sheet({ ...props }: React.ComponentProps<typeof SheetPrimitive.Root>) {
+function Sheet({ ...props  }) {
   return <SheetPrimitive.Root data-slot="sheet" {...props} />;
 }
 
-function SheetTrigger({
-  ...props
-}: React.ComponentProps<typeof SheetPrimitive.Trigger>) {
+function SheetTrigger({ ...props
+ }) {
   return <SheetPrimitive.Trigger data-slot="sheet-trigger" {...props} />;
 }
 
-function SheetClose({
-  ...props
-}: React.ComponentProps<typeof SheetPrimitive.Close>) {
+function SheetClose({ ...props
+ }) {
   return <SheetPrimitive.Close data-slot="sheet-close" {...props} />;
 }
 
-function SheetPortal({
-  ...props
-}: React.ComponentProps<typeof SheetPrimitive.Portal>) {
+function SheetPortal({ ...props
+ }) {
   return <SheetPrimitive.Portal data-slot="sheet-portal" {...props} />;
 }
 
-function SheetOverlay({
-  className,
+function SheetOverlay({ className,
   ...props
-}: React.ComponentProps<typeof SheetPrimitive.Overlay>) {
+ }) {
   return (
     <SheetPrimitive.Overlay
       data-slot="sheet-overlay"
@@ -101,10 +97,9 @@ function SheetFooter({ className, ...props }: React.ComponentProps<"div">) {
   );
 }
 
-function SheetTitle({
-  className,
+function SheetTitle({ className,
   ...props
-}: React.ComponentProps<typeof SheetPrimitive.Title>) {
+ }) {
   return (
     <SheetPrimitive.Title
       data-slot="sheet-title"
@@ -114,10 +109,9 @@ function SheetTitle({
   );
 }
 
-function SheetDescription({
-  className,
+function SheetDescription({ className,
   ...props
-}: React.ComponentProps<typeof SheetPrimitive.Description>) {
+ }) {
   return (
     <SheetPrimitive.Description
       data-slot="sheet-description"

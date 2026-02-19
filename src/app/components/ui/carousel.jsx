@@ -1,6 +1,6 @@
 "use client";
 
-import * as React from "react";
+import * from "react";
 import useEmblaCarousel, {
   type UseEmblaCarouselType,
 } from "embla-carousel-react";
@@ -30,7 +30,7 @@ type CarouselContextProps = {
   canScrollNext: boolean;
 } & CarouselProps;
 
-const CarouselContext = React.createContext<CarouselContextProps | null>(null);
+const CarouselContext = React.createContext(null);
 
 function useCarousel() {
   const context = React.useContext(CarouselContext);
@@ -171,12 +171,11 @@ function CarouselItem({ className, ...props }: React.ComponentProps<"div">) {
   );
 }
 
-function CarouselPrevious({
-  className,
+function CarouselPrevious({ className,
   variant = "outline",
   size = "icon",
   ...props
-}: React.ComponentProps<typeof Button>) {
+ }) {
   const { orientation, scrollPrev, canScrollPrev } = useCarousel();
 
   return (
@@ -201,12 +200,11 @@ function CarouselPrevious({
   );
 }
 
-function CarouselNext({
-  className,
+function CarouselNext({ className,
   variant = "outline",
   size = "icon",
   ...props
-}: React.ComponentProps<typeof Button>) {
+ }) {
   const { orientation, scrollNext, canScrollNext } = useCarousel();
 
   return (

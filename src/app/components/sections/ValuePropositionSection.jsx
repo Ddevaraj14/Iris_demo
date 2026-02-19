@@ -5,7 +5,7 @@ import { Target, TrendingUp, Zap, Shield } from 'lucide-react';
 
 export function ValuePropositionSection() {
   const { ref, isInView } = useInView();
-  const sectionRef = useRef<HTMLDivElement>(null);
+  const sectionRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ["start end", "end start"]

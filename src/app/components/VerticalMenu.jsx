@@ -1,10 +1,4 @@
-interface VerticalMenuProps {
-  sections: Array<{ id: string; label: string }>;
-  activeSection: string;
-  onSectionClick: (sectionId: string) => void;
-}
-
-export function VerticalMenu({ sections, activeSection, onSectionClick }: VerticalMenuProps) {
+export function VerticalMenu({ sections, activeSection, onSectionClick  }) {
   const activeIndex = sections.findIndex(s => s.id === activeSection);
 
   return (

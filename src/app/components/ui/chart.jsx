@@ -1,7 +1,7 @@
 "use client";
 
-import * as React from "react";
-import * as RechartsPrimitive from "recharts";
+import * from "react";
+import * from "recharts";
 
 import { cn } from "./utils";
 
@@ -22,7 +22,7 @@ type ChartContextProps = {
   config: ChartConfig;
 };
 
-const ChartContext = React.createContext<ChartContextProps | null>(null);
+const ChartContext = React.createContext(null);
 
 function useChart() {
   const context = React.useContext(ChartContext);
@@ -215,7 +215,7 @@ function ChartTooltipContent({
                           {
                             "--color-bg": indicatorColor,
                             "--color-border": indicatorColor,
-                          } as React.CSSProperties
+                          }.CSSProperties
                         }
                       />
                     )
