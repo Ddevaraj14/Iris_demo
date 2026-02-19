@@ -11,7 +11,7 @@ export function useAudio() {
 }
 
 // Audio file paths for each section - using base URL for GitHub Pages compatibility
-const BASE_URL = import.meta.env.BASE_URL;
+const BASE_URL = import.meta.env.BASE_URL || '/';
 const audioFiles = {
   'intro': `${BASE_URL}audio/intro.mp3`,
   'value-proposition': `${BASE_URL}audio/value-proposition.mp3`,
