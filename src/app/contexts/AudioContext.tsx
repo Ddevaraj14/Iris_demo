@@ -20,17 +20,18 @@ export function useAudio() {
   return context;
 }
 
-// Audio file paths for each section (placeholder paths - replace with your actual audio files)
+// Audio file paths for each section - using base URL for GitHub Pages compatibility
+const BASE_URL = import.meta.env.BASE_URL;
 const audioFiles: { [key: string]: string } = {
-  'intro': '/audio/intro.mp3',
-  'value-proposition': '/audio/value-proposition.mp3',
-  'full-addressability': '/audio/full-addressability.mp3',
-  'agnostic-platform': '/audio/agnostic-platform.mp3',
-  'campaign-management': '/audio/campaign-management.mp3',
-  'yield-optimization': '/audio/yield-optimization.mp3',
-  'audience-intelligence': '/audio/audience-intelligence.mp3',
-  'premium-programmatic': '/audio/premium-programmatic.mp3',
-  'flexible-delivery': '/audio/flexible-delivery.mp3',
+  'intro': `${BASE_URL}audio/intro.mp3`,
+  'value-proposition': `${BASE_URL}audio/value-proposition.mp3`,
+  'full-addressability': `${BASE_URL}audio/full-addressability.mp3`,
+  'agnostic-platform': `${BASE_URL}audio/agnostic-platform.mp3`,
+  'campaign-management': `${BASE_URL}audio/campaign-management.mp3`,
+  'yield-optimization': `${BASE_URL}audio/yield-optimization.mp3`,
+  'audience-intelligence': `${BASE_URL}audio/audience-intelligence.mp3`,
+  'premium-programmatic': `${BASE_URL}audio/premium-programmatic.mp3`,
+  'flexible-delivery': `${BASE_URL}audio/flexible-delivery.mp3`,
 };
 
 export function AudioProvider({ children }: { children: ReactNode }) {
