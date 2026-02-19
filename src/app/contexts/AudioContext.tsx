@@ -31,7 +31,7 @@ export function useAudio() {
 }
 
 // Audio file paths for each section - using base URL for GitHub Pages compatibility
-const BASE_URL = import.meta.env.BASE_URL;
+const BASE_URL = (import.meta as any).env.BASE_URL || '/';
 const audioFiles: { [key: string]: string } = {
   'intro': `${BASE_URL}audio/intro.mp3`,
   'value-proposition': `${BASE_URL}audio/value-proposition.mp3`,
@@ -98,7 +98,7 @@ export function AudioProvider({ children }: { children: ReactNode }) {
     const audioSrc = audioFiles[sectionId];
     if (audioSrc) {
       audioRef.current.src = audioSrc;
-      audioRef.current.play().catch((error) => {
+      audioRef.current.play().catch(() => {
         // Audio file doesn't exist or failed to load - use a timer fallback
         console.warn(`Audio file for ${sectionId} not found, using timer fallback`);
         // Simulate audio duration (5 seconds per section as fallback)
