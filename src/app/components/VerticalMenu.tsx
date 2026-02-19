@@ -20,10 +20,10 @@ export function VerticalMenu({ sections, activeSection, onSectionClick }: Vertic
             <button
               onClick={() => onSectionClick(section.id)}
               className={`
-                text-right text-xs font-['Source_Sans_Pro',sans-serif] tracking-[0.16px]
+                relative -translate-y-8 text-right text-xs font-['Source_Sans_Pro',sans-serif] tracking-[0.16px]
                 transition-all duration-300 whitespace-nowrap
                 ${isActive 
-                  ? 'text-[#f8f8f8] font-semibold text-sm opacity-100' 
+                  ? 'text-[#f8f8f8] opacity-0 font-semibold text-sm hover:opacity-100' 
                   : 'text-[#5e5e5e] opacity-0 group-hover:opacity-100'
                 }
               `}
@@ -33,14 +33,23 @@ export function VerticalMenu({ sections, activeSection, onSectionClick }: Vertic
 
             {/* Dot and Line Container */}
             <div className="flex flex-col items-center">
+              {/* Outer Ring (centered) */}
+            <div className={`
+                relative w-3 h-3 rounded-full border-2 border-white/20 
+                left-1/2 top-1/2 -translate-x-1/2 -translate-y-0
+                opacity-70
+                ${isActive ? 'w-4 h-4' : 'w-3 h-3'}
+                transition-all duration-300
+              `} />
+
               {/* Dot */}
               <button
                 onClick={() => onSectionClick(section.id)}
                 className={`
-                  rounded-full transition-all duration-300
+                  relative rounded-full transition-all duration-300 top-1/2 -translate-y-3
                   ${isActive 
-                    ? 'size-4 bg-[#e2e8f2] ring-4 ring-[#e2e8f2]/30' 
-                    : 'size-3 bg-[#5e5e5e] hover:bg-[#8e8e8e]'
+                    ?'size-1.5 bg-[#e2e8f2] shadow-[0_0_8px_rgba(226,232,242,0.5)]' 
+                    : 'size-1 hover:bg-[#8e8e8e] shadow-[0_0_4px_rgba(94,94,94,0.3)]'
                   }
                 `}
                 aria-label={`Go to ${section.label}`}
@@ -48,7 +57,7 @@ export function VerticalMenu({ sections, activeSection, onSectionClick }: Vertic
 
               {/* Connector Line */}
               {index < sections.length - 1 && (
-                <div className="relative w-0.5 h-16 bg-[#3e3e3e] rounded-full overflow-hidden">
+                <div className="relative translate-y-1 w-0.5 h-16 bg-[#3e3e3e] rounded-full overflow-hidden">
                   <div 
                     className={`
                       absolute top-0 left-0 w-full transition-all duration-700 ease-out bg-[#e2e8f2] rounded-full

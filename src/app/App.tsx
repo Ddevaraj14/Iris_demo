@@ -51,7 +51,7 @@ function AppContent() {
           // Reset manual scroll flag after animation
           setTimeout(() => {
             isManualScrollRef.current = false;
-          }, 1000);
+          }, 3000);
         }
       }
     };
@@ -103,12 +103,12 @@ function AppContent() {
     if (element && containerRef.current) {
       isManualScrollRef.current = true;
       stopAudio(); // Stop current audio when manually navigating
-      element.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
+      element.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest'  });
       
       // Reset manual scroll flag after animation
       setTimeout(() => {
         isManualScrollRef.current = false;
-      }, 1000);
+      }, 3000);
     }
   };
 
